@@ -1,6 +1,6 @@
 === Official Add to Homescreen ===
-Contributors:
-Donate link:
+Contributors: wordcubiq
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2MDE6YGQM7BCY
 Tags: mobile, homescreen, home screen, bookmark, iphone, android
 Requires at least: 3.5.1
 Tested up to: 3.9
