@@ -3,7 +3,7 @@
 Plugin Name: Official Add to Homescreen
 Plugin URI: http://addtohome.cubiq.org
 Description: Official WordPress plugin for <em>Add to Homescreen</em> javascript widget. The plugin opens a call out on iPhone and Chrome for Android inviting the user to add the website to the home screen. This plugin is developed by the same author of the javascript widget, so it is presumably the best way to get the latest updates and bug fixes.
-Version: 1.0.0
+Version: 1.0.1
 Author: Matteo Spinelli
 Author URI: http://cubiq.org
 Text Domain: cubiq-add-to-home

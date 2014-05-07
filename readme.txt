@@ -62,6 +62,9 @@ Just remember to deactivate the other plugins before installing this one.
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed paths
+
 = 1.0.0 =
 * Initial release
 

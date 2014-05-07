@@ -43,12 +43,12 @@ class Cubiq_Add_To_Home_Admin {
 		wp_enqueue_media();
 
 		// load custom scripts
-		$basepath = $this->_slug . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
-		wp_enqueue_script( $this->_slug . '-admin-script', plugins_url( $basepath . 'admin.js' ), array('jquery'), $this->_version );
-		wp_enqueue_script( $this->_slug . '-flot', plugins_url( $basepath . 'jquery.flot.min.js' ), null, $this->_version );
-		wp_enqueue_script( $this->_slug . '-flot-categories', plugins_url( $basepath . 'jquery.flot.categories.min.js' ), null, $this->_version );
-		wp_enqueue_script( $this->_slug . '-flot-resize', plugins_url( $basepath . 'jquery.flot.resize.min.js' ), null, $this->_version );
-		wp_enqueue_script( $this->_slug . '-add-to-homescreen', plugins_url( $basepath . 'addtohomescreen.min.js' ), null, $this->_version );
+		$basepath = plugins_url( 'assets' , dirname(__FILE__) ) . DIRECTORY_SEPARATOR;
+		wp_enqueue_script( $this->_slug . '-admin-script', $basepath . 'admin.js', array('jquery'), $this->_version );
+		wp_enqueue_script( $this->_slug . '-flot', $basepath . 'jquery.flot.min.js', null, $this->_version );
+		wp_enqueue_script( $this->_slug . '-flot-categories', $basepath . 'jquery.flot.categories.min.js', null, $this->_version );
+		wp_enqueue_script( $this->_slug . '-flot-resize', $basepath . 'jquery.flot.resize.min.js', null, $this->_version );
+		wp_enqueue_script( $this->_slug . '-add-to-homescreen', $basepath . 'addtohomescreen.min.js', null, $this->_version );
 
 		// load the dash icons
 		wp_enqueue_style('dashicons');

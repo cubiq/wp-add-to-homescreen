@@ -102,8 +102,10 @@ class Cubiq_Add_To_Home_Public {
 
 	public function enqueue_scripts () {
 		wp_enqueue_script('jquery');
-		wp_enqueue_script( $this->_slug . '-main', plugins_url( $this->_slug . '/assets/addtohomescreen.min.js' ), array(), $this->_version );
-		wp_enqueue_style( $this->_slug . '-style', plugins_url( $this->_slug . '/assets/addtohomescreen.css' ), array(), $this->_version );
+
+		$basepath = plugins_url( 'assets' , dirname(__FILE__) ) . DIRECTORY_SEPARATOR;
+		wp_enqueue_script( $this->_slug . '-main', $basepath . 'addtohomescreen.min.js', array(), $this->_version );
+		wp_enqueue_style( $this->_slug . '-style', $basepath . 'addtohomescreen.css', array(), $this->_version );
 	}
 
 }
