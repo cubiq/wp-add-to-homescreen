@@ -62,6 +62,11 @@ Just remember to deactivate the other plugins before installing this one.
 
 == Changelog ==
 
+= 1.0.2 =
+* [JS] Fixed language detection
+* [JS] Added Chinese translation
+* [JS] Fixed close button
+
 = 1.0.1 =
 * Fixed paths
 
