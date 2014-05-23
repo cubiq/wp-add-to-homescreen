@@ -251,7 +251,7 @@ class Cubiq_Add_To_Home_Admin {
 					'detect-webapp-capable'	=> array(__('The web site is web-app-capable'), __('Note that your web site has to be specifically crafted for this mode.')),
 					'detect-hash'			=> array(__('Location Hash'), __('The script adds a special token to the location hash, eg: www.example.com/#ath')),
 					'detect-query-string'	=> array(__('Query string'), __('The script adds a special token to the query string, eg: www.example.com/?ath=')),
-					'detect-smart-url'		=> array(__('Smart URL'), __('The script adds a special token to the smart URL, eg: www.example.com/ath/'))
+					'detect-smart-url'		=> array(__('Smart URL'), __('The script adds a special token to the smart URL. This is an advanced feature, do not use unless you know what you are doing! eg: www.example.com/ath/'))
 				)
 			)
 		);

@@ -62,6 +62,10 @@ Just remember to deactivate the other plugins before installing this one.
 
 == Changelog ==
 
+= 1.0.3 =
+* [JS] Minor bug fixes
+* [JS] Added German translation
+
 = 1.0.2 =
 * [JS] Fixed language detection
 * [JS] Added Chinese translation
