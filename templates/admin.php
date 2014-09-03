@@ -112,7 +112,14 @@ echo '];';
 </script>
 			<h3><?php echo __('Conversion rate', $this->_slug); ?></h3>
 			<p><?php echo __('Number of views vs added to homescreen. Stats are available only if user tracking is enabled.', $this->_slug); ?></p>
-			<div style="width:100%;height:300px" id="stats-conversion"></div>
+
+			<table class="form-table">
+			<?php do_settings_fields( $this->_slug, $this->_slug . '-stats' ); ?>
+			</table>
+
+			<div style="width:100%;height:300px;margin-bottom:10px<?php if ( $opt['stats_type'] == 'stats-ga' ) echo ';display:none' ?>" id="stats-conversion"></div>
+
+			<?php submit_button(); ?>
 		</div>
 
 	</form>

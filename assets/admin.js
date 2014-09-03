@@ -179,4 +179,12 @@ $('#stats-conversion').bind('plothover', function (event, pos, item) {
 	}
 });
 
+$('#stats-internal, #stats-ga').on('click', function () {
+	if ( $(this).val() == 'stats-ga' ) {
+		$('#stats-conversion').hide();
+	} else {
+		$('#stats-conversion').show();
+	}
+});
+
 });

@@ -37,8 +37,7 @@ class Cubiq_Add_To_Home_Public {
 
 		// normalize options for javascript
 		$opt['silent'] = isset( $opt['silent'] ) && $opt['silent'] == 1 ? true : false;
-
-		$opt['skip_first_visit'] = !isset( $opt['skip_first_visit'] ) ? 'true' : $opt['skip_first_visit'] == 1 ? 'false' : 'true';
+		$opt['skip_first_visit'] = !isset( $opt['skip_first_visit'] ) ? 'true' : $opt['skip_first_visit'] == 1 ? 'true' : 'false';
 		$opt['display_pace'] = isset( $opt['display_pace'] ) ? (int)$opt['display_pace'] : 1440;
 		$opt['max_display_count'] = isset( $opt['max_display_count'] ) ? (int)$opt['max_display_count'] : 1;
 		$opt['start_delay'] = isset( $opt['start_delay'] ) ? (int)$opt['start_delay'] : 1;
@@ -47,6 +46,10 @@ class Cubiq_Add_To_Home_Public {
 		$opt['debug'] = isset( $opt['debug'] ) && $opt['debug'] == 1 ? 'true' : 'false';
 		$opt['display_icon'] = !isset( $opt['display_icon'] ) ? 'true' : $opt['display_icon'] == 1 ? 'true' : 'false';
 		$opt['meta_tags'] = !isset( $opt['meta_tags'] ) ? 'true' : $opt['meta_tags'] == 1 ? 'true' : 'false';
+		$opt['message'] = !isset( $opt['message'] ) ? '' : esc_html( $opt['message'] );
+		$opt['title'] = !isset( $opt['title'] ) ? '' : esc_attr( $opt['title'] );
+		$opt['stats_type'] = !isset( $opt['stats_type'] ) ? 'stats-internal' : esc_attr($opt['stats_type']);
+		$opt['active_page'] = empty( $opt['active_page'] ) ? '' : $opt['active_page'];
 
 		if ( !empty($opt['debug_emulation']) && ( $opt['debug_emulation'] == 'ios' || $opt['debug_emulation'] == 'android' ) ) {
 			$opt['debug'] = "'" . $opt['debug_emulation'] . "'";
@@ -87,8 +90,8 @@ class Cubiq_Add_To_Home_Public {
 		$isCompatible = $this->_isCompatible;
 		$ajaxURL = admin_url('admin-ajax.php');
 
-		// it seems we can't check for the front page earlier than this
-		if ( !is_front_page() ) {
+		// check if the page is the one we want the message on
+		if ( ( empty($opt['active_page']) && !is_front_page() ) || ( !empty($opt['active_page']) && !is_page($opt['active_page']) ) ) {
 			return;
 		}
 

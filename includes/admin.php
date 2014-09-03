@@ -90,9 +90,42 @@ class Cubiq_Add_To_Home_Admin {
 			$this->_slug
 		);
 
+		add_settings_section(
+			$this->_slug . '-stats',
+			__('Statistics', $this->_slug),
+			array(&$this, 'dev_null'),
+			$this->_slug
+		);
+
 		/*
 		 * Fields
 		 */
+		add_settings_field(
+			$this->_slug . '-title',
+			__('Homescreen Title', $this->_slug),
+			array(&$this, 'input_text'),
+			$this->_slug,
+			$this->_slug . '-advanced',
+			array(
+				'field' => 'title',
+				'default' => '',
+				'desc' => __('The title that will be displayed in the homescreen. Leave blank to use the page title. Note: Android does not support this feature.')
+			)
+		);
+
+		add_settings_field(
+			$this->_slug . '-active-page',
+			__('Active Page', $this->_slug),
+			array(&$this, 'input_text'),
+			$this->_slug,
+			$this->_slug . '-advanced',
+			array(
+				'field' => 'active_page',
+				'default' => '',
+				'desc' => __('Slug, title or ID of the page where the message should be shown on. Leave blank for the front page.')
+			)
+		);
+
 		add_settings_field(
 			$this->_slug . '-skip-first-visit',
 			__('Skip first visit', $this->_slug),
@@ -299,6 +332,21 @@ class Cubiq_Add_To_Home_Admin {
 			)
 		);
 
+		add_settings_field(
+			$this->_slug . '-stats-type',
+			__('Stats type', $this->_slug),
+			array(&$this, 'input_fieldset'),
+			$this->_slug,
+			$this->_slug . '-stats',
+			array(
+				'field' => 'stats_type',
+				'default' => 'stats-internal',
+				'options' => array(
+					'stats-internal'	=> array(__('Integrated Statistics'), __("Use a local mysql database to store statistics.")),
+					'stats-ga'		=> array(__('Google Analytics (beta)'), __('Integrate with Google Analytics (beta: please report any problem). NOTE: GA must be already active on your wesite!'))
+				)
+			)
+		);
 	}
 
 	public function add_menu () {
@@ -330,7 +378,7 @@ class Cubiq_Add_To_Home_Admin {
 		$field = $args['field'];
 		$value = $this->_options;
 		$value = esc_attr(( isset($value[$field]) ? $value[$field] : $args['default'] ));
-		if ( !$value ) {
+		if ( !$value && $value !== '' ) {
 			$value = '0';
 		}
 

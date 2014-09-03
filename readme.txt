@@ -3,7 +3,7 @@ Contributors: wordcubiq
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2MDE6YGQM7BCY
 Tags: mobile, homescreen, home screen, bookmark, iphone, android
 Requires at least: 3.5.1
-Tested up to: 3.9
+Tested up to: 3.9.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,13 @@ Just remember to deactivate the other plugins before installing this one.
 2. Statistics
 
 == Changelog ==
+
+= 1.1.0 =
+* Added "Homescreen Title" option
+* Added "Destination Page" option
+* Added Google Analytics integration
+* Fixed custom message not showing up
+* [JS] Added French translation
 
 = 1.0.3 =
 * [JS] Minor bug fixes
