@@ -18,7 +18,7 @@ class Cubiq_Add_To_Home_Admin {
 		add_action('admin_menu', array( &$this, 'add_menu' ));
 		add_action('admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ));
 
-		add_filter('plugin_row_meta', array( &$this, 'add_row_meta' ));
+		add_filter('plugin_action_links_' . plugin_basename( realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' ) ) . DIRECTORY_SEPARATOR . $this->_slug . '.php', array( &$this, 'plugin_action_links' ));
 	}
 
 	public static function get_instance () {
@@ -29,8 +29,8 @@ class Cubiq_Add_To_Home_Admin {
 		return self::$_instance;
 	}
 
-	public function add_row_meta ($links) {
-		$links[] = '<a href="options-general.php?page=' . $this->_slug . '">' . __('Settings') . '</a>';
+	public function plugin_action_links ($links) {
+		array_unshift($links, '<a href="options-general.php?page=' . $this->_slug . '">' . __('Settings') . '</a>');
 		return $links;
 	}
 

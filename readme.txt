@@ -2,8 +2,8 @@
 Contributors: wordcubiq
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2MDE6YGQM7BCY
 Tags: mobile, homescreen, home screen, bookmark, iphone, android
-Requires at least: 3.5.1
-Tested up to: 3.9.2
+Requires at least: 3.5
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Official Add To Homescreen plugin displays a callout to mobile users inviting th
 
 This is the only WordPress plugin developed by the same author of the javascript widget (hence "official"). If you wish to be always up to date and receive the latest bug fixes, this plugin is probably your best bet.
 
-The plugin opens an always-on-top message inviting the mobile user to add the application to the home screen. This is currently supported on iOS and Mobile Chrome. While other devices have the ability to bookmark any website to the home screen, only iOS and Mobile Chrome have a straightforward way to do it. Windows Phone support is planned for a future release.
+The plugin opens a message inviting the mobile user to add the application to the home screen. This is currently supported on iOS and Mobile Chrome. While other devices have the ability to bookmark any website to the home screen, only iOS and Mobile Chrome have a straightforward way to do it. Windows Phone support is planned for a future release.
 
 To enhance performance and reduce complexity I'm supporting the latest two OS version for each device only.
 
@@ -39,7 +39,6 @@ This section describes how to install the plugin and get it working.
 1. Upload the full directory into your `wp-content/plugins` directory
 2. Activate the plugin at the plugin administration page
 3. Open the plugin settings page under Settings > Add to homescreen and add an application icon. Optionally customize the options to your liking
-4. There's no 4. Enjoy!
 
 == Frequently Asked Questions ==
 
@@ -61,6 +60,9 @@ Just remember to deactivate the other plugins before installing this one.
 2. Statistics
 
 == Changelog ==
+
+= 1.1.1 =
+* fixed wrong settings link in plugin page
 
 = 1.1.0 =
 * Added "Homescreen Title" option
