@@ -122,7 +122,7 @@ class Cubiq_Add_To_Home_Admin {
 			array(
 				'field' => 'active_page',
 				'default' => '',
-				'desc' => __('Slug, title or ID of the page where the message should be shown on. Leave blank for the front page.')
+				'desc' => __('Slug, title, ID or full URL of the page where the message should be shown on. Leave blank for the front page.')
 			)
 		);
 

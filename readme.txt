@@ -61,6 +61,9 @@ Just remember to deactivate the other plugins before installing this one.
 
 == Changelog ==
 
+= 1.1.2 =
+* You can now set the active page by full URL
+
 = 1.1.1 =
 * fixed wrong settings link in plugin page
 

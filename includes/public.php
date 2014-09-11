@@ -86,12 +86,17 @@ class Cubiq_Add_To_Home_Public {
 	}
 
 	public function head () {
+		global $wp;
+
 		$opt = $this->_options;
 		$isCompatible = $this->_isCompatible;
 		$ajaxURL = admin_url('admin-ajax.php');
 
 		// check if the page is the one we want the message on
-		if ( ( empty($opt['active_page']) && !is_front_page() ) || ( !empty($opt['active_page']) && !is_page($opt['active_page']) ) ) {
+		if (
+			( empty($opt['active_page']) && !is_front_page() ) ||
+			( !empty($opt['active_page']) && ( !is_page($opt['active_page']) && home_url( $wp->request ) != $opt['active_page'] ) )
+		) {
 			return;
 		}
 
