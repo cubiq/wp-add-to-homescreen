@@ -76,6 +76,20 @@ class Cubiq_Add_To_Home {
 		$domain = strtolower( str_replace('_', '-', get_class()) );
 		load_plugin_textdomain($domain, false, dirname(plugin_basename(__FILE__)) . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR);
 	}
+        
+        /**
+         * Add trailing slash to URL if not already present.
+         * 
+         * @param string $url
+         * @return string
+         */
+        public static function add_trailing_slash_to_url( $url ) {
+            
+            $trailing_slash = '/';
+            
+            return ( substr( $url, -1) !== '/' ) ? $url . $trailing_slash : $url;
+            
+        }
 
 }
 

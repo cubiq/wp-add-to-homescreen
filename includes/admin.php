@@ -35,6 +35,7 @@ class Cubiq_Add_To_Home_Admin {
 	}
 
 	public function enqueue_scripts ($hook) {
+            
 		if ( $hook !== 'settings_page_' . $this->_slug ) {
 			return;
 		}
@@ -43,7 +44,7 @@ class Cubiq_Add_To_Home_Admin {
 		wp_enqueue_media();
 
 		// load custom scripts
-		$basepath = plugins_url( 'assets' , dirname(__FILE__) ) . DIRECTORY_SEPARATOR;
+		$basepath = Cubiq_Add_To_Home::add_trailing_slash_to_url( plugins_url( 'assets' , dirname(__FILE__) ) );
 		wp_enqueue_script( $this->_slug . '-admin-script', $basepath . 'admin.js', array('jquery'), $this->_version );
 		wp_enqueue_script( $this->_slug . '-flot', $basepath . 'jquery.flot.min.js', null, $this->_version );
 		wp_enqueue_script( $this->_slug . '-flot-categories', $basepath . 'jquery.flot.categories.min.js', null, $this->_version );
