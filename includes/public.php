@@ -111,7 +111,7 @@ class Cubiq_Add_To_Home_Public {
 	public function enqueue_scripts () {
 		wp_enqueue_script('jquery');
 
-		$basepath = plugins_url( 'assets' , dirname(__FILE__) ) . DIRECTORY_SEPARATOR;
+		$basepath = Cubiq_Add_To_Home::add_trailing_slash_to_url( plugins_url( 'assets' , dirname(__FILE__) ) );
 		wp_enqueue_script( $this->_slug . '-main', $basepath . 'addtohomescreen.min.js', array(), $this->_version );
 		wp_enqueue_style( $this->_slug . '-style', $basepath . 'addtohomescreen.css', array(), $this->_version );
 	}
